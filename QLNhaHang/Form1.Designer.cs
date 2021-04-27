@@ -56,6 +56,10 @@ namespace QLNhaHang
             this.lblMenu = new System.Windows.Forms.Label();
             this.lblLoaimon = new System.Windows.Forms.Label();
             this.dgvdsmonan = new System.Windows.Forms.DataGridView();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cbxGoimonMenu = new System.Windows.Forms.ComboBox();
             this.cbxLoaimonan = new System.Windows.Forms.ComboBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
@@ -72,13 +76,19 @@ namespace QLNhaHang
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.btnCal = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lblPercent = new System.Windows.Forms.Label();
             this.lblDiscount = new System.Windows.Forms.Label();
+            this.lblDienthoaiKH = new System.Windows.Forms.Label();
+            this.lblDiachiKH = new System.Windows.Forms.Label();
+            this.lblTenKH = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             this.txtMoney = new System.Windows.Forms.TextBox();
-            this.btnCal = new System.Windows.Forms.Button();
             this.cbxNhanVien = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
@@ -120,10 +130,6 @@ namespace QLNhaHang
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.tabPage7 = new System.Windows.Forms.TabPage();
             this.tabPage8 = new System.Windows.Forms.TabPage();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -452,6 +458,30 @@ namespace QLNhaHang
             this.dgvdsmonan.TabIndex = 1;
             this.dgvdsmonan.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvdsmonan_CellClick);
             // 
+            // Column8
+            // 
+            this.Column8.DataPropertyName = "tenmonan";
+            this.Column8.HeaderText = "Tên món";
+            this.Column8.Name = "Column8";
+            // 
+            // Column12
+            // 
+            this.Column12.DataPropertyName = "tenmenu";
+            this.Column12.HeaderText = "Tên menu";
+            this.Column12.Name = "Column12";
+            // 
+            // Column10
+            // 
+            this.Column10.DataPropertyName = "gia";
+            this.Column10.HeaderText = "Giá";
+            this.Column10.Name = "Column10";
+            // 
+            // Column11
+            // 
+            this.Column11.DataPropertyName = "mota";
+            this.Column11.HeaderText = "Loại";
+            this.Column11.Name = "Column11";
+            // 
             // cbxGoimonMenu
             // 
             this.cbxGoimonMenu.FormattingEnabled = true;
@@ -568,7 +598,7 @@ namespace QLNhaHang
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cbxBanan.DisplayMember = "1";
             this.cbxBanan.FormattingEnabled = true;
-            this.cbxBanan.Location = new System.Drawing.Point(160, 52);
+            this.cbxBanan.Location = new System.Drawing.Point(160, 25);
             this.cbxBanan.Name = "cbxBanan";
             this.cbxBanan.Size = new System.Drawing.Size(121, 24);
             this.cbxBanan.TabIndex = 0;
@@ -579,7 +609,7 @@ namespace QLNhaHang
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(32, 55);
+            this.label1.Location = new System.Drawing.Point(32, 28);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(112, 16);
             this.label1.TabIndex = 1;
@@ -596,9 +626,9 @@ namespace QLNhaHang
             // 
             this.groupBox2.Controls.Add(this.button1);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.groupBox2.Location = new System.Drawing.Point(0, 175);
+            this.groupBox2.Location = new System.Drawing.Point(0, 304);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(328, 253);
+            this.groupBox2.Size = new System.Drawing.Size(328, 124);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Lập hóa đơn";
@@ -608,21 +638,36 @@ namespace QLNhaHang
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(110, 93);
+            this.button1.Location = new System.Drawing.Point(99, 41);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(131, 66);
+            this.button1.Size = new System.Drawing.Size(131, 49);
             this.button1.TabIndex = 0;
             this.button1.Text = "Lập hóa đơn";
             this.button1.UseVisualStyleBackColor = true;
+            // 
+            // btnCal
+            // 
+            this.btnCal.Location = new System.Drawing.Point(122, 268);
+            this.btnCal.Name = "btnCal";
+            this.btnCal.Size = new System.Drawing.Size(99, 23);
+            this.btnCal.TabIndex = 4;
+            this.btnCal.Text = "Tính tiền";
+            this.btnCal.UseVisualStyleBackColor = true;
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.lblPercent);
             this.groupBox1.Controls.Add(this.lblDiscount);
+            this.groupBox1.Controls.Add(this.btnCal);
+            this.groupBox1.Controls.Add(this.lblDienthoaiKH);
+            this.groupBox1.Controls.Add(this.lblDiachiKH);
+            this.groupBox1.Controls.Add(this.lblTenKH);
             this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.textBox5);
+            this.groupBox1.Controls.Add(this.textBox4);
+            this.groupBox1.Controls.Add(this.textBox2);
             this.groupBox1.Controls.Add(this.txtMoney);
-            this.groupBox1.Controls.Add(this.btnCal);
             this.groupBox1.Controls.Add(this.cbxNhanVien);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.dateTimePicker1);
@@ -630,7 +675,7 @@ namespace QLNhaHang
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(328, 169);
+            this.groupBox1.Size = new System.Drawing.Size(328, 298);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin hóa đơn";
@@ -653,6 +698,42 @@ namespace QLNhaHang
             this.lblDiscount.TabIndex = 9;
             this.lblDiscount.Text = "Giảm giá";
             // 
+            // lblDienthoaiKH
+            // 
+            this.lblDienthoaiKH.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblDienthoaiKH.AutoSize = true;
+            this.lblDienthoaiKH.Location = new System.Drawing.Point(7, 243);
+            this.lblDienthoaiKH.Name = "lblDienthoaiKH";
+            this.lblDienthoaiKH.Size = new System.Drawing.Size(67, 16);
+            this.lblDienthoaiKH.TabIndex = 1;
+            this.lblDienthoaiKH.Text = "Điện thoại";
+            // 
+            // lblDiachiKH
+            // 
+            this.lblDiachiKH.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblDiachiKH.AutoSize = true;
+            this.lblDiachiKH.Location = new System.Drawing.Point(7, 214);
+            this.lblDiachiKH.Name = "lblDiachiKH";
+            this.lblDiachiKH.Size = new System.Drawing.Size(48, 16);
+            this.lblDiachiKH.TabIndex = 1;
+            this.lblDiachiKH.Text = "Địa chỉ";
+            // 
+            // lblTenKH
+            // 
+            this.lblTenKH.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblTenKH.AutoSize = true;
+            this.lblTenKH.Location = new System.Drawing.Point(7, 184);
+            this.lblTenKH.Name = "lblTenKH";
+            this.lblTenKH.Size = new System.Drawing.Size(53, 16);
+            this.lblTenKH.TabIndex = 1;
+            this.lblTenKH.Text = "Tên KH";
+            // 
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(122, 113);
@@ -669,6 +750,30 @@ namespace QLNhaHang
             this.label4.TabIndex = 6;
             this.label4.Text = "VNĐ";
             // 
+            // textBox5
+            // 
+            this.textBox5.Enabled = false;
+            this.textBox5.Location = new System.Drawing.Point(122, 240);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(152, 22);
+            this.textBox5.TabIndex = 5;
+            // 
+            // textBox4
+            // 
+            this.textBox4.Enabled = false;
+            this.textBox4.Location = new System.Drawing.Point(122, 211);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(152, 22);
+            this.textBox4.TabIndex = 5;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Enabled = false;
+            this.textBox2.Location = new System.Drawing.Point(122, 181);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(152, 22);
+            this.textBox2.TabIndex = 5;
+            // 
             // txtMoney
             // 
             this.txtMoney.Enabled = false;
@@ -676,15 +781,6 @@ namespace QLNhaHang
             this.txtMoney.Name = "txtMoney";
             this.txtMoney.Size = new System.Drawing.Size(152, 22);
             this.txtMoney.TabIndex = 5;
-            // 
-            // btnCal
-            // 
-            this.btnCal.Location = new System.Drawing.Point(10, 140);
-            this.btnCal.Name = "btnCal";
-            this.btnCal.Size = new System.Drawing.Size(99, 23);
-            this.btnCal.TabIndex = 4;
-            this.btnCal.Text = "Tính tiền";
-            this.btnCal.UseVisualStyleBackColor = true;
             // 
             // cbxNhanVien
             // 
@@ -1084,30 +1180,6 @@ namespace QLNhaHang
             this.tabPage8.Text = "Thống kê";
             this.tabPage8.UseVisualStyleBackColor = true;
             // 
-            // Column8
-            // 
-            this.Column8.DataPropertyName = "tenmonan";
-            this.Column8.HeaderText = "Tên món";
-            this.Column8.Name = "Column8";
-            // 
-            // Column12
-            // 
-            this.Column12.DataPropertyName = "tenmenu";
-            this.Column12.HeaderText = "Tên menu";
-            this.Column12.Name = "Column12";
-            // 
-            // Column10
-            // 
-            this.Column10.DataPropertyName = "gia";
-            this.Column10.HeaderText = "Giá";
-            this.Column10.Name = "Column10";
-            // 
-            // Column11
-            // 
-            this.Column11.DataPropertyName = "mota";
-            this.Column11.HeaderText = "Loại";
-            this.Column11.Name = "Column11";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1254,6 +1326,12 @@ namespace QLNhaHang
         private System.Windows.Forms.DataGridViewTextBoxColumn Column12;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
+        private System.Windows.Forms.Label lblTenKH;
+        private System.Windows.Forms.Label lblDienthoaiKH;
+        private System.Windows.Forms.Label lblDiachiKH;
+        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textBox2;
     }
 }
 
